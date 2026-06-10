@@ -8,7 +8,6 @@ import dto.DetalleAlquiler;
 import java.sql.*;
 
 public class AlquilerDAO implements IRegistrable {
-
     private Connection con;
     private VehiculoDAO vehiculoDAO;
 
