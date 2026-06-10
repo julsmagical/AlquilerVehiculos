@@ -37,18 +37,13 @@ public class MenuClientes {
 
     private void registrarCliente() {
         System.out.println("\n── REGISTRAR CLIENTE ─────────────────");
-        System.out.print("Cédula     : "); String cedula    = sc.nextLine().trim();
-        System.out.print("Nombres    : "); String nombres   = sc.nextLine().trim();
-        System.out.print("Apellidos  : "); String apellidos = sc.nextLine().trim();
+        String cedula    = Utilidades.leerCampo(sc, "Cédula     : ");
+        String nombres   = Utilidades.leerCampo(sc, "Nombres    : ");
+        String apellidos = Utilidades.leerCampo(sc, "Apellidos  : ");
         System.out.print("Teléfono   : "); String telefono  = sc.nextLine().trim();
         System.out.print("Email      : "); String email     = sc.nextLine().trim();
         System.out.print("Dirección  : "); String direccion = sc.nextLine().trim();
-        System.out.print("Licencia   : "); String licencia  = sc.nextLine().trim();
-
-        if (licencia.isEmpty()) {
-            System.out.println("La licencia es obligatoria.");
-            return;
-        }
+        String licencia  = Utilidades.leerCampo(sc, "Licencia   : ");
 
         Cliente c = new Cliente(cedula, nombres, apellidos, telefono, email, direccion, licencia);
         clienteDAO.registrar(c);

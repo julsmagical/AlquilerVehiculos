@@ -47,8 +47,7 @@ public class MenuAlquiler {
     private void nuevoAlquiler() {
         System.out.println("\n── NUEVO ALQUILER ────────────────────");
 
-        System.out.print("Cédula del cliente: ");
-        String cedula = sc.nextLine().trim();
+        String cedula = Utilidades.leerCampo(sc, "Cédula del cliente: ");
         Cliente cliente = clienteDAO.buscarPorCedula(cedula);
 
         if (cliente == null) {

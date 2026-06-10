@@ -23,4 +23,14 @@ public class Utilidades {
             }
         }
     }
+
+    public static String leerCampo(Scanner sc, String etiqueta) {
+        String valor;
+        do {
+            System.out.print(etiqueta);
+            valor = sc.nextLine().trim();
+            if (valor.isEmpty()) System.out.println("Este campo es obligatorio.");
+        } while (valor.isEmpty());
+        return valor;
+    }
 }
