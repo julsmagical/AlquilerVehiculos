@@ -24,13 +24,24 @@ public class Utilidades {
         }
     }
 
-    public static String leerCampo(Scanner sc, String etiqueta) {
+    public static String leerCampo(Scanner sc, String etiqueta, boolean mayusculas) {
         String valor;
         do {
             System.out.print(etiqueta);
             valor = sc.nextLine().trim();
-            if (valor.isEmpty()) System.out.println("Este campo es obligatorio.");
+            if (mayusculas) {
+                valor = valor.toUpperCase();
+            }
+
+            if (valor.isEmpty()) {
+                System.out.println("Este campo es obligatorio.");
+            }
         } while (valor.isEmpty());
         return valor;
+    }
+
+    //solo mando true cuando necesite hacer touppercase
+    public static String leerCampo(Scanner sc, String etiqueta) {
+        return leerCampo(sc, etiqueta, false);
     }
 }

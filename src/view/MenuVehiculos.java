@@ -42,11 +42,11 @@ public class MenuVehiculos {
         System.out.println("\n── REGISTRAR VEHÍCULO ────────────────");
         System.out.println("Tipos: 1=Sedán  2=SUV  3=Camioneta  4=Deportivo  5=Van");
         System.out.print("ID tipo    : "); int idTipo  = Utilidades.leerInt(sc);
-        System.out.print("Marca      : "); String marca   = sc.nextLine().trim();
-        System.out.print("Modelo     : "); String modelo  = sc.nextLine().trim();
+        String marca = Utilidades.leerCampo(sc, "Marca      : ");
+        String modelo = Utilidades.leerCampo(sc, "Modelo     : ");
         System.out.print("Año        : "); int anio    = Utilidades.leerInt(sc);
-        System.out.print("Placa      : "); String placa   = sc.nextLine().trim().toUpperCase();
-        System.out.print("Color      : "); String color   = sc.nextLine().trim();
+        String placa = Utilidades.leerCampo(sc, "Placa      : ", true);
+        System.out.print("Color      : "); String color   = sc.nextLine().trim(); //unico posible null
         System.out.print("Precio/día : "); double precio  = Utilidades.leerDouble(sc);
         System.out.print("Stock      : "); int stock   = Utilidades.leerInt(sc);
 
